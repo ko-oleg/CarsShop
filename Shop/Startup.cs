@@ -13,7 +13,6 @@ using Shop.Data;
 using Shop.Data.Interfaces;
 using Shop.Data.mocks;
 using Shop.Data.Repository;
-using Shop.Migrations;
 using Shop.Data.Models;
 using IHostingEnvironment = Microsoft.Extensions.Hosting.IHostingEnvironment;
 using ShopCart = Shop.Data.Models.ShopCart;
@@ -37,6 +36,7 @@ namespace Shop
                 options.UseSqlServer(_confString.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllCars, CarRepotitory>();
             services.AddTransient<ICarsCategory, CategoryRepository>();
+            services.AddTransient<IAllOrders, OrdersRepository>();
             
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShopCart.GetCart(sp));

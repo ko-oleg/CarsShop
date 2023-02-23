@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Shop.Data.Interfaces;
 using Shop.Data.Repository;
-using Shop.Migrations;
 using Shop.Data.Models;
 using ShopCart = Shop.Data.Models.ShopCart;
 using Shop.ViewModels;
@@ -36,7 +35,6 @@ namespace Shop.Controllers
             {
                 _shopCart.AddToCart(item);
             }
-
             return RedirectToAction("Index");
         }
     }
