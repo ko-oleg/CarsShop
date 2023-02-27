@@ -1,3 +1,6 @@
 body{
     background: #fcfcfc;
 }
+.btn-delete{
+    float: right;
+}

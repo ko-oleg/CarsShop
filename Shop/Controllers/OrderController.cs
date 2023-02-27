@@ -24,12 +24,12 @@ namespace Shop.Controllers
         public IActionResult Checkout(Order order)
         {
             shopCart.listShopItems = shopCart.getShopItems();
-
+            
             if (shopCart.listShopItems.Count == 0)
             {
                 ModelState.AddModelError("","У вас должны быть товары");
             }
-
+            
             if (ModelState.IsValid)
             {
                 allOrders.createOrder(order);
@@ -44,5 +44,7 @@ namespace Shop.Controllers
             ViewBag.Message = "Заказ успешно обратботан";
             return View();
         }
+        
+        
     }
 }

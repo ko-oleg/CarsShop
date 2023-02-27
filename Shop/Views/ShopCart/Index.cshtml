@@ -1,10 +1,12 @@
 ﻿@model ShopCartViewModel
+
 <div class="container">
     @foreach (var el in Model.ShopCart.listShopItems)
     {
         <div class="alert alert-warning mt-3">
-            <b>Автомобиль:</b>@el.car.name<br/>
-            <b>Цена:</b>@el.car.price.ToString("c")
+            <b>Автомобиль: </b>@el.car.name<br/>
+            <b>Цена: </b>@el.car.price.ToString("c")
+            <a class="btn btn-danger float-right" asp-controller = "ShopCart" asp-route-id = "@Model.ShopCart.ShopCartId" asp-action="Delete">Удалить</a>
         </div>
     }
     <hr/>

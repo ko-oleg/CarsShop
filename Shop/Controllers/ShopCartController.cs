@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic.CompilerServices;
 using Shop.Data.Interfaces;
 using Shop.Data.Repository;
 using Shop.Data.Models;
@@ -35,6 +36,12 @@ namespace Shop.Controllers
             {
                 _shopCart.AddToCart(item);
             }
+            return RedirectToAction("Index");
+        }
+        
+        public IActionResult Delete(string id)
+        {
+            _shopCart.DeleteCart(id);
             return RedirectToAction("Index");
         }
     }
