@@ -43,9 +43,9 @@ namespace Shop.Data.Models
             appDbContent.SaveChanges();
         }
         
-        public void DeleteCart(string id)
+        public void DeleteCart(string idCart, int idCar)
         {
-            var cart = appDbContent.ShopCartItems.FirstOrDefault(x=> x.ShopCartId ==id);
+            var cart = appDbContent.ShopCartItems.FirstOrDefault(x=> x.ShopCartId ==idCart && x.car.id == idCar);
             appDbContent.ShopCartItems.Remove(cart);
             appDbContent.SaveChanges();
         }

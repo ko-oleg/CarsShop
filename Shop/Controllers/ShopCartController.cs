@@ -39,9 +39,9 @@ namespace Shop.Controllers
             return RedirectToAction("Index");
         }
         
-        public IActionResult Delete(string id)
+        public IActionResult Delete(string idCart, int idCar)
         {
-            _shopCart.DeleteCart(id);
+            _shopCart.DeleteCart(idCart, idCar);
             return RedirectToAction("Index");
         }
     }

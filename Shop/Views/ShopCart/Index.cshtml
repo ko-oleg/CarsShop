@@ -6,7 +6,7 @@
         <div class="alert alert-warning mt-3">
             <b>Автомобиль: </b>@el.car.name<br/>
             <b>Цена: </b>@el.car.price.ToString("c")
-            <a class="btn btn-danger float-right" asp-controller = "ShopCart" asp-route-id = "@Model.ShopCart.ShopCartId" asp-action="Delete">Удалить</a>
+            <a class="btn btn-danger float-right" asp-controller = "ShopCart" asp-route-idCart = "@Model.ShopCart.ShopCartId" asp-route-idCar="@el.car.id" asp-action="Delete">Удалить</a>
         </div>
     }
     <hr/>
