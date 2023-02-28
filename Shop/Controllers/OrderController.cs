@@ -41,7 +41,7 @@ namespace Shop.Controllers
 
         public IActionResult Complete()
         {
-            ViewBag.Message = "Заказ успешно обратботан";
+            ViewBag.Message = "Заказ успешно обработан";
             return View();
         }
         

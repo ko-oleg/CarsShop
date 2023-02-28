@@ -1,5 +1,7 @@
-﻿@model ShopCartViewModel
-
+﻿@model ShopCartViewModel;
+@{
+    var total =0;
+}
 <div class="container">
     @foreach (var el in Model.ShopCart.listShopItems)
     {
@@ -7,8 +9,15 @@
             <b>Автомобиль: </b>@el.car.name<br/>
             <b>Цена: </b>@el.car.price.ToString("c")
             <a class="btn btn-danger float-right" asp-controller = "ShopCart" asp-route-idCart = "@Model.ShopCart.ShopCartId" asp-route-idCar="@el.car.id" asp-action="Delete">Удалить</a>
+            @{
+                total += @el.price;
+            }
         </div>
     }
+    
+    <div class="">
+        <b>Общая цена: </b> @total.ToString("c")
+    </div>
     <hr/>
     <a class="btn btn-danger" asp-controller = "Order" asp-action="Checkout">Оплатить</a>
 </div>

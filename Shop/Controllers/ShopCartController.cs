@@ -44,5 +44,10 @@ namespace Shop.Controllers
             _shopCart.DeleteCart(idCart, idCar);
             return RedirectToAction("Index");
         }
+        
+        public IActionResult GoBackToIndex()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }

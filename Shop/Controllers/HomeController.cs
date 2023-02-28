@@ -23,5 +23,10 @@ namespace Shop.Controllers
             };
             return View(homeCars);
         }
+        
+        public IActionResult GoBackToIndex()
+        {
+            return RedirectToAction("Index");
+        }
     }
 }
